@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2098554991444199860}
   - component: {fileID: 2948359147160154525}
   - component: {fileID: 2119654130827718698}
-  - component: {fileID: 5473436919536846610}
+  - component: {fileID: 2261587861967652780}
   m_Layer: 0
   m_Name: Hexagon
   m_TagString: Player
@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexagon: {fileID: 4197377813799063271}
+  colorIndex: 0
+  matchingTiles: []
 --- !u!114 &2119654130827718698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,19 +157,25 @@ MonoBehaviour:
   topTrigger: {fileID: 6726004755999819087}
   bottomTrigger: {fileID: 8189083869201023332}
   matchingTiles: []
---- !u!114 &5473436919536846610
-MonoBehaviour:
+--- !u!95 &2261587861967652780
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4197377813799063271}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a6f0fb07fe25864d93303543c7d047e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hexagon: {fileID: 4197377813799063271}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7a508ac5f3e551448f9f6f75974ca32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5548272770884553620
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HexagonNormal : MonoBehaviour
 {
-
     public GameObject hexagon;
+    private Animator hexagonAnimator;
     public int colorIndex;
     public List<GameObject> matchingTiles = new List<GameObject>();
 
@@ -15,6 +15,11 @@ public class HexagonNormal : MonoBehaviour
     {
         colorIndex = Random.Range(0, BoardManager.instance.hexagonColor.Length);
         hexagon.GetComponent<SpriteRenderer>().color = BoardManager.instance.hexagonColor[colorIndex];
+        hexagonAnimator = GetComponent<Animator>();
+    }
+    private void Update()
+    {
+        CheckMatches();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,8 +28,30 @@ public class HexagonNormal : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<SpriteRenderer>().color.linear == gameObject.GetComponent<SpriteRenderer>().color.linear)
             {
-                Destroy(collision.gameObject);
+                matchingTiles.Add(collision.gameObject);
             }
         }
+    }
+
+    private void CheckMatches()
+    {
+        if (matchingTiles.Count >= 2)
+            foreach(GameObject gameObject in matchingTiles) 
+            {
+                hexagonAnimator.Play("MatchAndRespawn");
+                break;
+            }
+        else
+        {
+            hexagonAnimator.Play("Hexagon");
+        }
+        
+    }
+
+    private void DestroyAndRespawn()
+    {
+        matchingTiles.Clear();
+        colorIndex = Random.Range(0, BoardManager.instance.hexagonColor.Length);
+        hexagon.GetComponent<SpriteRenderer>().color = BoardManager.instance.hexagonColor[colorIndex];
     }
 }
