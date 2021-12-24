@@ -20,7 +20,8 @@ public class BoardManager : MonoBehaviour
         new Color(0, 0.73f, 0.83f),
         new Color(0.29f, 0.68f, 0.31f)
     };
-    void Start()
+
+    void Awake()
     {
         instance = GetComponent<BoardManager>();
         Camera.main.transform.position = new Vector3((xSize / 2 - 0.5f) * xOffSet, ySize / 2 * yOffSet, Camera.main.transform.position.z);
@@ -37,9 +38,7 @@ public class BoardManager : MonoBehaviour
 
                 //Are we on an odd row?
                 if (x % 2 == 1)
-                {
                     yPos += yOffSet / 2;
-                }
 
                 GameObject newHexagon = Instantiate(hexagonPrefab, new Vector3(x * xOffSet, yPos), hexagonPrefab.transform.rotation);
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwapManager : MonoBehaviour
 {
     public GameObject topTrigger, bottomTrigger;
+    public List<GameObject> matchingTiles = new List<GameObject>();
 
     bool isTop, isBottom, isPivot;
 
