@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5254649408077680596}
   - component: {fileID: 2098554991444199860}
   - component: {fileID: 2948359147160154525}
+  - component: {fileID: 2119654130827718698}
   m_Layer: 0
   m_Name: Hexagon
   m_TagString: Untagged
@@ -138,6 +139,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexagon: {fileID: 4197377813799063271}
+--- !u!114 &2119654130827718698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197377813799063271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7d8983dc9f22047bb30fb63adfda11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topTrigger: {fileID: 6726004755999819087}
+  bottomTrigger: {fileID: 8189083869201023332}
 --- !u!1 &5548272770884553620
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +248,7 @@ GameObject:
   - component: {fileID: 5638582487434510584}
   m_Layer: 0
   m_Name: TopTrigger
-  m_TagString: Untagged
+  m_TagString: TopTrigger
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +317,7 @@ GameObject:
   - component: {fileID: 5181437571888917352}
   m_Layer: 0
   m_Name: BottomTrigger
-  m_TagString: Untagged
+  m_TagString: BottomTrigger
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
