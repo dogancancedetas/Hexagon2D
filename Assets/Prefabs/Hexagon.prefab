@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6837311642666832379}
   - component: {fileID: 5254649408077680596}
   - component: {fileID: 2098554991444199860}
+  - component: {fileID: 2948359147160154525}
   m_Layer: 0
   m_Name: Hexagon
   m_TagString: Untagged
@@ -124,6 +125,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2948359147160154525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197377813799063271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14aaaf44dc5eca84a93e8426a6ac87ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hexagon: {fileID: 4197377813799063271}
 --- !u!1 &5548272770884553620
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +208,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6937817954938267909, guid: a4c56d2c80a685346934828e3be62ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
