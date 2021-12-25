@@ -5,8 +5,6 @@ using UnityEngine;
 public class SwapManager : MonoBehaviour
 {
     public GameObject topTrigger, bottomTrigger;
-    public List<GameObject> matchingTiles = new List<GameObject>();
-
     bool isTop, isBottom, isPivot;
 
     private void Update()
@@ -15,16 +13,13 @@ public class SwapManager : MonoBehaviour
         {
             if (isPivot)
             {
+                BoardManager.instance.isGameStarted = true;
                 transform.position = new Vector3(transform.position.x + 0.764f, transform.position.y + 0.441f);
             }
             else if (isTop)
-            {
                 transform.position = new Vector3(transform.position.x, transform.position.y + (-0.882f));
-            }
             else if (isBottom)
-            {
                 transform.position = new Vector3(transform.position.x - 0.764f, transform.position.y - (-0.441f));
-            }
         }
     }
 

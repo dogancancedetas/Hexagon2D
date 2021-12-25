@@ -6,11 +6,16 @@ public class BoardManager : MonoBehaviour
 {
     public static BoardManager instance;
     public GameObject hexagonPrefab;
+
     public int xSize = 8;
     public int ySize = 9;
 
     float xOffSet = 0.764f;
     float yOffSet = 0.882f;
+
+    public int point;
+    public bool isGameStarted;
+
 
     public Color[] hexagonColor = new Color[]
     {
@@ -23,7 +28,9 @@ public class BoardManager : MonoBehaviour
 
     void Awake()
     {
-        instance = GetComponent<BoardManager>();
+        if (instance == null)
+            instance = this;
+
         Camera.main.transform.position = new Vector3((xSize / 2 - 0.5f) * xOffSet, ySize / 2 * yOffSet, Camera.main.transform.position.z);
         SetBoard();
     }
@@ -39,12 +46,10 @@ public class BoardManager : MonoBehaviour
                 //Are we on an odd row?
                 if (x % 2 == 1)
                     yPos += yOffSet / 2;
-
-                GameObject newHexagon = Instantiate(hexagonPrefab, new Vector3(x * xOffSet, yPos), hexagonPrefab.transform.rotation);
-
-                newHexagon.name = "Hexagon[" + x + "," + y + ")";
-                newHexagon.transform.parent = transform;
-
+             
+               GameObject newHexagon = Instantiate(hexagonPrefab, new Vector3(x * xOffSet, yPos), hexagonPrefab.transform.rotation);
+               newHexagon.name = "Hexagon[" + x + "," + y + ")";
+               newHexagon.transform.parent = transform;
             }
         }
     }
