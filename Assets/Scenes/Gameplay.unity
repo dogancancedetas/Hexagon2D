@@ -234,8 +234,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385281228}
-  - component: {fileID: 385281227}
   - component: {fileID: 385281229}
+  - component: {fileID: 385281227}
   m_Layer: 0
   m_Name: Board Manager
   m_TagString: Untagged
@@ -258,13 +258,14 @@ MonoBehaviour:
   hexagonPrefab: {fileID: 4197377813799063271, guid: 7cbdb255043fb5b4fbe970d56c36acad, type: 3}
   xSize: 8
   ySize: 9
-  scoreText: {fileID: 1456913820}
   hexagonColor:
   - {r: 0.54, g: 0.17, b: 0.15, a: 1}
   - {r: 0.33, g: 0.13, b: 0.36, a: 1}
   - {r: 0.2, g: 0.24, b: 0.48, a: 1}
   - {r: 0.28, g: 0.57, b: 0.61, a: 1}
   - {r: 0.3, g: 0.55, b: 0.31, a: 1}
+  scoreText: {fileID: 1456913820}
+  score: 0
 --- !u!4 &385281228
 Transform:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 385281226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1dea4e96d522d243905bc2bcda368ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bac21583b19a7e4fbbfdb7387b9bb34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &409874691
@@ -375,7 +376,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 385281229}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -671,8 +672,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1005,8 +1006,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1129,7 +1130,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 37f9659c50a87c543a18f12007273079, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

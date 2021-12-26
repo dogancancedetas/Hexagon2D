@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuManager : MonoBehaviour
+public class ButtonManager : MonoBehaviour
 {
-    public void PlayGame()
+    private void PlayGame()
     {
         SceneManager.LoadScene("Gameplay");
     }
-    public void ExitGame()
+    private void ExitGame()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void URL()
+    {
+        Application.OpenURL("https://youtu.be/FKIg8Hrsu00?t=79");
     }
 }

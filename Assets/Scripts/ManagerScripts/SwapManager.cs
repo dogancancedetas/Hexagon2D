@@ -5,14 +5,14 @@ using UnityEngine;
 public class SwapManager : MonoBehaviour
 {
     public GameObject topTrigger, bottomTrigger;
-    bool isTop, isBottom, isPivot;
     private AudioSource hexagonAudio;
     public AudioClip clickSound;
+
+    bool isTop, isBottom, isPivot;
 
     private void Start()
     {
         hexagonAudio = GetComponent<AudioSource>();
-
     }
 
     private void Update()
@@ -53,6 +53,7 @@ public class SwapManager : MonoBehaviour
         else if (collision.gameObject.tag == "BottomTrigger")
             isBottom = true;
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "TopTrigger")

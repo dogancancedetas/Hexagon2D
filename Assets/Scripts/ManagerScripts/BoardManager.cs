@@ -14,11 +14,6 @@ public class BoardManager : MonoBehaviour
     float xOffSet = 0.764f;
     float yOffSet = 0.882f;
 
-    internal bool isGameStarted;
-
-    public TextMeshProUGUI scoreText;
-    int score;
-
     public Color[] hexagonColor = new Color[]
     {
         new Color(0.54f, 0.17f, 0.15f),
@@ -27,6 +22,11 @@ public class BoardManager : MonoBehaviour
         new Color(0.28f, 0.57f, 0.61f),
         new Color(0.3f, 0.55f, 0.31f)
     };
+
+    internal bool isGameStarted;
+
+    public TextMeshProUGUI scoreText;
+    public int score;
 
     void Awake()
     {
@@ -43,18 +43,24 @@ public class BoardManager : MonoBehaviour
         {
             for (int y = 0; y < ySize; y++)
             {
-                float yPos = y * yOffSet;
-
-                //Are we on an odd row?
-                if (x % 2 == 1)
-                    yPos += yOffSet / 2;
-             
-               GameObject newHexagon = Instantiate(hexagonPrefab, new Vector3(x * xOffSet, yPos), hexagonPrefab.transform.rotation);
-               newHexagon.name = "Hexagon[" + x + "," + y + ")";
-               newHexagon.transform.parent = transform;
+                GenerateHexagon(x, y);
             }
         }
     }
+
+    private void GenerateHexagon(int x, int y)
+    {
+        float yPos = y * yOffSet;
+
+        //Are we on an odd row?
+        if (x % 2 == 1)
+            yPos += yOffSet / 2;
+
+        GameObject newHexagon = Instantiate(hexagonPrefab, new Vector3(x * xOffSet, yPos), hexagonPrefab.transform.rotation);
+        newHexagon.name = "Hexagon[" + x + "," + y + "]";
+        newHexagon.transform.parent = transform;
+    }
+
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
