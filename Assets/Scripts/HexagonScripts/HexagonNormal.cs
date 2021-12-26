@@ -13,6 +13,9 @@ public class HexagonNormal : MonoBehaviour
     public List<GameObject> matchingTiles = new List<GameObject>();
     public TextMeshProUGUI bombText;
 
+    public int pointValue;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -56,6 +59,6 @@ public class HexagonNormal : MonoBehaviour
         matchingTiles.Clear();
         colorIndex = Random.Range(0, BoardManager.instance.hexagonColor.Length);
         hexagon.GetComponent<SpriteRenderer>().color = BoardManager.instance.hexagonColor[colorIndex];
-        BoardManager.instance.point += 10;
+        BoardManager.instance.UpdateScore(pointValue);
     }
 }

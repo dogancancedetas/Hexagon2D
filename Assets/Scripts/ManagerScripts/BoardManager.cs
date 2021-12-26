@@ -1,29 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BoardManager : MonoBehaviour
 {
     public static BoardManager instance;
     public GameObject hexagonPrefab;
 
-    public int xSize = 8;
-    public int ySize = 9;
+    [SerializeField]
+    int xSize = 8, ySize = 9;
 
     float xOffSet = 0.764f;
     float yOffSet = 0.882f;
 
-    public int point;
-    public bool isGameStarted;
+    internal bool isGameStarted;
 
+    public TextMeshProUGUI scoreText;
+    int score;
 
     public Color[] hexagonColor = new Color[]
     {
-        new Color(0.95f, 0.26f, 0.21f),
-        new Color(0.61f, 0.15f, 0.69f),
-        new Color(0.24f, 0.31f, 0.7f),
-        new Color(0, 0.73f, 0.83f),
-        new Color(0.29f, 0.68f, 0.31f)
+        new Color(0.54f, 0.17f, 0.15f),
+        new Color(0.33f, 0.13f, 0.36f),
+        new Color(0.2f, 0.24f, 0.48f),
+        new Color(0.28f, 0.57f, 0.61f),
+        new Color(0.3f, 0.55f, 0.31f)
     };
 
     void Awake()
@@ -52,6 +54,11 @@ public class BoardManager : MonoBehaviour
                newHexagon.transform.parent = transform;
             }
         }
+    }
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = score.ToString();
     }
 
 }

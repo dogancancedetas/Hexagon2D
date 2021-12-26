@@ -6,6 +6,14 @@ public class SwapManager : MonoBehaviour
 {
     public GameObject topTrigger, bottomTrigger;
     bool isTop, isBottom, isPivot;
+    private AudioSource hexagonAudio;
+    public AudioClip clickSound;
+
+    private void Start()
+    {
+        hexagonAudio = GetComponent<AudioSource>();
+
+    }
 
     private void Update()
     {
@@ -13,6 +21,7 @@ public class SwapManager : MonoBehaviour
         {
             if (isPivot)
             {
+                hexagonAudio.PlayOneShot(clickSound, 1);
                 BoardManager.instance.isGameStarted = true;
                 transform.position = new Vector3(transform.position.x + 0.764f, transform.position.y + 0.441f);
             }
